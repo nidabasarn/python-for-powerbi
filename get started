@@ -1,7 +1,7 @@
-To install
+> To install
 pip install pypowerbi
 
-To post a data set
+> To post a data set
 import adal
 from pypowerbi.dataset import Column, Table, Dataset
 from pypowerbi.client import PowerBIClient
@@ -47,7 +47,7 @@ dataset = Dataset(name='AnExampleDatasetName', tables=tables)
 # Post dataset
 client.datasets.post_dataset(dataset)
 
-To refresh a dataset
+> To refresh a dataset
 import adal
 from pypowerbi.dataset import Column, Table, Dataset
 from pypowerbi.client import PowerBIClient
