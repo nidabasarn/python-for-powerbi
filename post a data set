@@ -1,7 +1,4 @@
-#To install
-pip install pypowerbi
-
-#To post a data set
+# To post a data set
 import adal
 from pypowerbi.dataset import Column, Table, Dataset
 from pypowerbi.client import PowerBIClient
@@ -47,18 +44,3 @@ dataset = Dataset(name='AnExampleDatasetName', tables=tables)
 ### Post dataset
 client.datasets.post_dataset(dataset)
 
-#To refresh a dataset
-import adal
-from pypowerbi.dataset import Column, Table, Dataset
-from pypowerbi.client import PowerBIClient
-from Credentials import client_id, username, password
-
-### Report to Refresh
-group_id = "<your dataset's group id>"
-dataset_id = "<your dataset's report id>"
-
-### Powerbi api client
-client = PowerBIClient.get_client_with_username_password(client_id=client_id, username=username, password=password)
-
-notify_option = "MailOnFailure"
-client.datasets.refresh_dataset(dataset_id, notify_option=notify_option, group_id=group_id)
